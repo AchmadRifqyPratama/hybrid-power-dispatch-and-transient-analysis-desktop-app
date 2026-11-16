@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="assets/logo.png" alt="HPP Studio" height="72">
-</p>
-
 <h1 align="center">HPP Studio</h1>
 
 <p align="center">
