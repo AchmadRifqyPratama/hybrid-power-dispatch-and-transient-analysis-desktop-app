@@ -1,0 +1,42 @@
+
+=== 2026-11-11T15:46:31.861361 ===
+Traceback (most recent call last):
+  File "D:\OneDrive - Akartha Energy\Documents\Akartha's work\00 Engineering Dev\HPPStudio\v23\HPPStudio\main.py", line 111, in <module>
+    main()
+    ~~~~^^
+  File "D:\OneDrive - Akartha Energy\Documents\Akartha's work\00 Engineering Dev\HPPStudio\v23\HPPStudio\main.py", line 63, in main
+    from app.gui.main_window import MainWindow
+  File "D:\OneDrive - Akartha Energy\Documents\Akartha's work\00 Engineering Dev\HPPStudio\v23\HPPStudio\app\gui\main_window.py", line 24, in <module>
+    from .pages.transient_page import TransientPage
+  File "D:\OneDrive - Akartha Energy\Documents\Akartha's work\00 Engineering Dev\HPPStudio\v23\HPPStudio\app\gui\pages\transient_page.py", line 29, in <module>
+    from ..plotutil import (CopyTableWidget, rect_zoom, LeaveWatcher,
+                            HeightGrip, WheelToScroll)
+ImportError: cannot import name 'rect_zoom' from 'app.gui.plotutil' (D:\OneDrive - Akartha Energy\Documents\Akartha's work\00 Engineering Dev\HPPStudio\v23\HPPStudio\app\gui\plotutil.py)
+
+=== 2026-11-11T15:46:58.015108 ===
+Traceback (most recent call last):
+  File "D:\OneDrive - Akartha Energy\Documents\Akartha's work\00 Engineering Dev\HPPStudio\v23\HPPStudio\main.py", line 111, in <module>
+    main()
+    ~~~~^^
+  File "D:\OneDrive - Akartha Energy\Documents\Akartha's work\00 Engineering Dev\HPPStudio\v23\HPPStudio\main.py", line 63, in main
+    from app.gui.main_window import MainWindow
+  File "D:\OneDrive - Akartha Energy\Documents\Akartha's work\00 Engineering Dev\HPPStudio\v23\HPPStudio\app\gui\main_window.py", line 24, in <module>
+    from .pages.transient_page import TransientPage
+  File "D:\OneDrive - Akartha Energy\Documents\Akartha's work\00 Engineering Dev\HPPStudio\v23\HPPStudio\app\gui\pages\transient_page.py", line 29, in <module>
+    from ..plotutil import (CopyTableWidget, rect_zoom, LeaveWatcher,
+                            HeightGrip, WheelToScroll)
+ImportError: cannot import name 'rect_zoom' from 'app.gui.plotutil' (D:\OneDrive - Akartha Energy\Documents\Akartha's work\00 Engineering Dev\HPPStudio\v23\HPPStudio\app\gui\plotutil.py)
+
+=== 2026-11-11T15:47:35.347109 ===
+Traceback (most recent call last):
+  File "D:\OneDrive - Akartha Energy\Documents\Akartha's work\00 Engineering Dev\HPPStudio\v23\HPPStudio\main.py", line 111, in <module>
+    main()
+    ~~~~^^
+  File "D:\OneDrive - Akartha Energy\Documents\Akartha's work\00 Engineering Dev\HPPStudio\v23\HPPStudio\main.py", line 63, in main
+    from app.gui.main_window import MainWindow
+  File "D:\OneDrive - Akartha Energy\Documents\Akartha's work\00 Engineering Dev\HPPStudio\v23\HPPStudio\app\gui\main_window.py", line 24, in <module>
+    from .pages.transient_page import TransientPage
+  File "D:\OneDrive - Akartha Energy\Documents\Akartha's work\00 Engineering Dev\HPPStudio\v23\HPPStudio\app\gui\pages\transient_page.py", line 29, in <module>
+    from ..plotutil import (CopyTableWidget, rect_zoom, LeaveWatcher,
+                            HeightGrip, WheelToScroll)
+ImportError: cannot import name 'rect_zoom' from 'app.gui.plotutil' (D:\OneDrive - Akartha Energy\Documents\Akartha's work\00 Engineering Dev\HPPStudio\v23\HPPStudio\app\gui\plotutil.py)
