@@ -174,4 +174,4 @@ from app.engine.simulation import SimulationEngine
 
 ## License
 
-© Akartha Energi Baru. All rights reserved. <!-- replace with your chosen license -->
+All rights reserved. <!-- replace with your chosen license -->
