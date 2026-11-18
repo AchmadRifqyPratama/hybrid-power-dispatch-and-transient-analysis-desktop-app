@@ -16,6 +16,10 @@
   <img alt="Version" src="https://img.shields.io/badge/version-v181-orange">
 </p>
 
+<p align="center">
+  <img src="docs/demo.gif" alt="HPP Studio demo: from login to project setup, data import, simulation, optimisation, multi-year, transient study and results" width="900">
+</p>
+
 ---
 
 ## Features
@@ -41,8 +45,11 @@ python -m venv .venv
 .venv\Scripts\activate            # Linux/macOS: source .venv/bin/activate
 pip install -r requirements.txt
 python selftest.py                # optional: engine check without GUI
+python set_password.py            # once: set the login password (stored locally)
 python main.py
 ```
+
+The app opens with a password gate. The password hash is kept in `app/config/password_local.py`, which is created by `set_password.py` and ignored by git. Without that file every password is rejected.
 
 On Windows you can also double-click **`run_dev.bat`**. It picks Python 3.10–3.13, creates a venv and starts the app.
 PySide6 does not support Python 3.14 yet.
@@ -63,6 +70,63 @@ PySide6 does not support Python 3.14 yet.
 5. **Optimization** / **Multi-Year**: sizing sweep and long-term projection.
 6. **Transient**: dynamic studies, optionally validated against PQA data.
 7. **Results**: KPIs, cash flow, Excel export and reports.
+
+## Screenshots
+
+Captured from v23 with the bundled `assets/sample_input.xlsx` (one year, hourly) and default parameters. Figures are illustrative only.
+
+### Login
+Password gate shown before the main window.
+
+<img src="docs/screenshots/login.png" alt="Login" width="420">
+
+### Home
+Project identity, site coordinates (with map picker) and a summary of the loaded data and last simulation.
+
+<img src="docs/screenshots/home.png" alt="Home page">
+
+### Parameters
+Every system input in one place: utility grid, PV, inverter, BESS, diesel, dispatch strategy and load-supply / charging priorities, finance and constraints.
+
+<img src="docs/screenshots/parameters.png" alt="Parameters page">
+
+### Data
+Import load, PV, grid status and other profiles from Excel/CSV, or download PV from PVGIS and wind from ERA5. Includes a profile preview.
+
+<img src="docs/screenshots/data.png" alt="Data page">
+
+### Dashboard
+Runs the dispatch simulation and shows headline KPIs with interactive charts.
+
+| Time series | Advanced (EMS) |
+|---|---|
+| <img src="docs/screenshots/dashboard.png" alt="Dashboard time series"> | <img src="docs/screenshots/dashboard-advanced.png" alt="Dashboard advanced EMS"> |
+| **Energy mix** | **Monthly** |
+| <img src="docs/screenshots/dashboard-energy-mix.png" alt="Dashboard energy mix"> | <img src="docs/screenshots/dashboard-monthly.png" alt="Dashboard monthly"> |
+| **Heatmap** | **Light theme** |
+| <img src="docs/screenshots/dashboard-heatmap.png" alt="Dashboard heatmap"> | <img src="docs/screenshots/dashboard-light.png" alt="Dashboard light theme"> |
+
+### Optimization
+Sweep of PV / inverter / BESS sizes with constraints and prioritised objectives. Candidates are ranked, and the best one can be applied back to Parameters.
+
+<img src="docs/screenshots/optimization.png" alt="Optimization page">
+
+### Multi-Year
+Project-lifetime simulation with PV degradation and BESS state of health, giving lifetime LCOE, NPV, IRR and payback plus yearly charts and tables.
+
+<img src="docs/screenshots/multi-year.png" alt="Multi-Year page">
+
+### Transient
+Single-bus RMS studies with Pass/Fail evidence per criterion and the standard behind each limit. PQA measurements can be imported for comparison.
+
+| Study setup | Simulation results |
+|---|---|
+| <img src="docs/screenshots/transient.png" alt="Transient setup"> | <img src="docs/screenshots/transient-simulation.png" alt="Transient simulation results"> |
+
+### Results
+Technical and financial KPIs, cumulative cash flow, Excel export, architecture design and the feasibility-study report.
+
+<img src="docs/screenshots/results.png" alt="Results page">
 
 ## Input data
 
