@@ -1,29 +1,26 @@
-"""Ubah kata sandi HPP Studio (gerbang login).
+"""Atur kata sandi HPP Studio (gerbang login).
 
 Jalankan:
     python set_password.py
 
 Skrip akan meminta kata sandi baru dua kali (input tersembunyi), menghitung
-hash SHA-256-nya, lalu MENULIS otomatis nilai PASSWORD_SHA256 ke berkas
-app/config/security.py. Tidak ada kata sandi yang disimpan sebagai teks.
-
-Alternatif tanpa skrip ini: lihat petunjuk "CARA 2 — manual" di dalam
-app/config/security.py.
+hash SHA-256-nya, lalu MENULIS berkas lokal app/config/password_local.py.
+Berkas itu di-ignore oleh git sehingga hash tidak pernah ikut ke repositori.
+Tanpa berkas itu aplikasi menolak semua kata sandi.
 """
 from __future__ import annotations
 import getpass
 import hashlib
 import os
-import re
 import sys
 
-SEC_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                        'app', 'config', 'security.py')
+LOCAL_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                          'app', 'config', 'password_local.py')
 
 
 def main() -> int:
-    if not os.path.exists(SEC_PATH):
-        print(f'[GAGAL] Tidak menemukan {SEC_PATH}')
+    if not os.path.isdir(os.path.dirname(LOCAL_PATH)):
+        print(f'[GAGAL] Folder tidak ditemukan: {os.path.dirname(LOCAL_PATH)}')
         return 1
 
     # input tersembunyi bila terminal mendukung; jika tidak (mis. IDE),
@@ -39,22 +36,12 @@ def main() -> int:
 
     new_hash = hashlib.sha256(pw1.encode('utf-8')).hexdigest()
 
-    with open(SEC_PATH, 'r', encoding='utf-8') as f:
-        src = f.read()
-
-    pattern = r'(PASSWORD_SHA256\s*=\s*")[0-9a-fA-F]{64}(")'
-    if not re.search(pattern, src):
-        print('[GAGAL] Tidak menemukan baris PASSWORD_SHA256 yang valid di '
-              'security.py. Ubah manual sesuai petunjuk di berkas itu.')
-        return 1
-    src2 = re.sub(pattern, lambda m: m.group(1) + new_hash + m.group(2), src,
-                  count=1)
-
-    with open(SEC_PATH, 'w', encoding='utf-8') as f:
-        f.write(src2)
+    with open(LOCAL_PATH, 'w', encoding='utf-8') as f:
+        f.write('# Dibuat oleh set_password.py — JANGAN di-commit ke git.\n')
+        f.write(f'PASSWORD_SHA256 = "{new_hash}"\n')
 
     print('\n[OK] Kata sandi diperbarui.')
-    print(f'     PASSWORD_SHA256 = "{new_hash}"')
+    print(f'     Disimpan di {LOCAL_PATH}')
     print('     Berlaku saat aplikasi dibuka berikutnya.')
     return 0
 
