@@ -1,6 +1,0 @@
-Windows fatal exception: code 0x800706ba
-
-Thread 0x000089cc (most recent call first):
-  File "D:\OneDrive - Akartha Energy\Documents\Akartha's work\00 Engineering Dev\v22\HPPStudio\app\gui\widgets.py", line 154 in _import_curve
-  File "D:\OneDrive - Akartha Energy\Documents\Akartha's work\00 Engineering Dev\v22\HPPStudio\main.py", line 104 in main
-  File "D:\OneDrive - Akartha Energy\Documents\Akartha's work\00 Engineering Dev\v22\HPPStudio\main.py", line 111 in <module>
