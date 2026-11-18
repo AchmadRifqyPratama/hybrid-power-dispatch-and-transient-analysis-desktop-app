@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/logo.png" alt="HPP Studio" height="72">
+</p>
+
 <h1 align="center">HPP Studio</h1>
 
 <p align="center">
@@ -103,3 +107,7 @@ from app.engine.simulation import SimulationEngine
 
 - Engineering basis, standards and change notes: [`docs/v162_wtg_stg_transient.md`](docs/v162_wtg_stg_transient.md)
 - Dispatch audits: `audit_dispatch*.py`, `cek_dispatch.py`
+
+## License
+
+© Akartha Energi Baru. All rights reserved. <!-- replace with your chosen license -->
