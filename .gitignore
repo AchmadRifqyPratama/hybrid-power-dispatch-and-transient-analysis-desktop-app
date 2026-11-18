@@ -27,3 +27,6 @@ xref-*.html
 .idea/
 .DS_Store
 Thumbs.db
+
+# Local password hash (created by set_password.py) - never commit
+app/config/password_local.py

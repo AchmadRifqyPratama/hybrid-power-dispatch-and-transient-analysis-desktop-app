@@ -31,6 +31,7 @@ a = Analysis(
           # OCR terbawa: model ONNX PP-OCRv4 (app/ocr/models)
           + [('app/ocr/models', 'app/ocr/models')],
     hiddenimports=[
+        'app.config.password_local',  # hash kata sandi lokal (set_password.py)
         'pyqtgraph', 'openpyxl',
         'matplotlib.backends.backend_agg',
         'matplotlib.backends.backend_svg',
